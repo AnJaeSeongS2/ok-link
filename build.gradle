@@ -67,7 +67,7 @@ build {
 bootJar {
     dependsOn asciidoctor
     from ("${asciidoctor.outputDir}/html5") {
-        into 'static/docs'
+        into 'BOOT-INF/classes/static/docs'
     }
     mainClassName = 'org.sonan.oklink.OkLinkApplication'
 }
