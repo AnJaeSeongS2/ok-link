@@ -1,0 +1,36 @@
+ifdef::genericApiPath[]
+== {genericApiPath} API
+endif::genericApiPath[]
+
+:snippets: ../../../../build/generated-snippets
+
+ifdef::genericApiDescription[]
+Description:
+
+[subs="attributes"]
+----
+{genericApiDescription}
+----
+endif::genericApiDescription[]
+
+ifdef::genericApiDirName[]
+CURL:
+
+include::{snippets}/{genericApiDirName}/curl-request.adoc[]
+
+Request HTTP Example:
+
+include::{snippets}/{genericApiDirName}/http-request.adoc[]
+
+Request Body Example:
+
+include::{snippets}/{genericApiDirName}/request-body.adoc[]
+
+Response HTTP Example:
+
+include::{snippets}/{genericApiDirName}/http-response.adoc[]
+
+Response Body Example:
+
+include::{snippets}/{genericApiDirName}/response-body.adoc[]
+endif::genericApiDirName[]

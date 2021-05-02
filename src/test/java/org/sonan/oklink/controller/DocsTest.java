@@ -1,4 +1,4 @@
-package org.sonan.oklink.controller.archive;
+package org.sonan.oklink.controller;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,35 +13,32 @@ import static org.sonan.oklink.restdoc.ApiDocumentUtils.getDocumentRequest;
 import static org.sonan.oklink.restdoc.ApiDocumentUtils.getDocumentResponse;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * Created by Jaeseong on 2021/04/30
+ * Created by Jaeseong on 2021/05/02
  * Git Hub : https://github.com/AnJaeSeongS2
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(Redirect.class)
+@WebMvcTest(Docs.class)
 @AutoConfigureRestDocs(uriScheme = "https", uriHost = "sonan.test.com")
-class RedirectTest {
+class DocsTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    void redirect() throws Exception {
-        //given
-        // nothing.
+    void docs() throws Exception {
 
         //when
-        ResultActions result = this.mockMvc.perform(
-            get("/archive/redirect")
-        );
+        ResultActions result = this.mockMvc.perform(get("/docs"));
 
         //then
         result
-            .andExpect(status().is3xxRedirection())
-            .andExpect(redirectedUrl("/"))
-            .andDo(document("archive-redirect", getDocumentRequest(), getDocumentResponse()));
+            .andExpect(status().isOk())
+            .andDo(document("docs", getDocumentRequest(), getDocumentResponse()))
+
+            .andDo(print());
     }
 }

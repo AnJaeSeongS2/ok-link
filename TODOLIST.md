@@ -13,4 +13,5 @@
 | 3 |서버 부하 방지 기능 추가<br />동일 origin에서 동일 archive 5초이내 요청시, archive redirect fail with 429 (too many request)<br />origin 변조할 경우 어떻게 대응? -> archive 에 대한 절대적 분당 접근가능 제한이 존재하게 한다. 그외에, 429.<br />접근 횟수들은 memory에 들고 있어도 무방할 듯. 서버 자체의 부하용 기능이므로. |  |  |  |  |  |
 | 4 |add archive page redirect monitoring |  |  |  |  |  |
 | 5 |rest api doc 사용법 숙지 (ref: https://woowabros.github.io/experience/2018/12/28/spring-rest-docs.html , ref2: https://jojoldu.tistory.com/294, ref3: https://jaehun2841.github.io/2019/08/04/2019-08-04-spring-rest-docs/#%EA%B2%B0%EA%B3%BC)<br />배포된 jar에서도 /docs/index.html로 restdocs 열람 정상 확인. | DONE | 100% | 05-01 | 05-01 | 3h |
-| 6 |asciidoc (adoc) file intellij 에서 보기 추가. | DONE | 100% | 05-01 | 05-01 | 10m |
+| 6 |asciidoc (adoc) file intellij 에서 보기 추가.<br />asciidoc 사용법 ref: https://narusas.github.io/2018/03/21/Asciidoc-basic.html<br />remove asciidoc template file's error | DONE | 100% | 05-01 | 05-01 | 1h |
+
